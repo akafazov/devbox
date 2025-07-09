@@ -12,7 +12,7 @@ RUN apt-get update && apt-get install -y \
     ca-certificates \
     gnupg \
     lsb-release \
-    less openssl telnet net-tools iputils-ping dnsutils jq \
+    less openssl telnet net-tools iputils-ping dnsutils jq procps htop \
     && rm -rf /var/lib/apt/lists/*
 
 # Create a non-root user
