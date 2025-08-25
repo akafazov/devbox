@@ -23,6 +23,11 @@ RUN curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/s
 RUN mv kubectl /usr/local/bin/
 RUN chmod +x /usr/local/bin/kubectl
 
+ENV VERSION=v4.47.1
+ENV BINARY=yq_linux_amd64
+
+RUN wget https://github.com/mikefarah/yq/releases/download/${VERSION}/${BINARY}.tar.gz -O - | tar xz && sudo mv ${BINARY} /usr/local/bin/yq
+
 # Copy and run krew installation script
 COPY install-krew.sh /tmp/install-krew.sh
 RUN chmod +x /tmp/install-krew.sh
