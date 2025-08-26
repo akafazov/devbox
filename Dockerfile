@@ -38,6 +38,8 @@ WORKDIR /home/devuser
 # Switch to non-root user
 USER devuser
 
+COPY .bash_aliases /home/devuser/.bash_aliases
+
 # Install krew as devuser
 RUN /tmp/install-krew.sh && sudo rm /tmp/install-krew.sh
 
