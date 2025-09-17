@@ -44,6 +44,15 @@ RUN export OCM_VERSION="0.29.0" && \
 # Copy and run krew installation script
 COPY install-krew.sh /tmp/install-krew.sh
 RUN chmod +x /tmp/install-krew.sh
+RUN /tmp/install-krew.sh
+
+COPY install-helm.sh /tmp/install-helm.sh
+RUN chmod +x /tmp/install-helm.sh
+RUN /tmp/install-helm.sh
+
+# COPY setup-kcp.sh /tmp/setup-kcp.sh
+# RUN chmod +x /tmp/setup-kcp.sh
+# RUN /tmp/setup-kcp.sh
 
 # Set working directory
 WORKDIR /home/devuser
